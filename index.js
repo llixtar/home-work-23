@@ -31,28 +31,26 @@ class CalorieCalculator {
 
 
 const calorieCalculator = new CalorieCalculator();
-let productName = 'Apple';
-let countCalories = 52;
+let productNameA = 'Apple';
+let countCaloriesA = 52;
 
-console.log(`Add product: \nname = ${productName}, calories = ${countCalories}`)
-calorieCalculator.addProduct(productName, countCalories);
+console.log(`Add product: \nname = ${productNameA}, calories = ${countCaloriesA}`)
+calorieCalculator.addProduct(productNameA, countCaloriesA);
 
-productName = 'Banana';
-countCalories = 89;
-console.log(`Add product: \nname = ${productName}, calories = ${countCalories}`)
-calorieCalculator.addProduct(productName, countCalories);
+productNameB = 'Banana';
+countCaloriesB = 89;
+console.log(`Add product: \nname = ${productNameB}, calories = ${countCaloriesB}`)
+calorieCalculator.addProduct(productNameB, countCaloriesB);
 
 
-console.log(`\nGet ${productName} calories = ` + calorieCalculator.getProductCalories(productName)); // 89
+console.log(`\nGet ${productNameB} calories = ` + calorieCalculator.getProductCalories(productNameB)); // 89
+console.log(`Get ${productNameA} calories = ` + calorieCalculator.getProductCalories(productNameA));  // 52
 
-productName = 'Apple';
-console.log(`Get ${productName} calories = ` + calorieCalculator.getProductCalories(productName));  // 52
+console.log(`\n*** Remove ${productNameA} ***`);
+calorieCalculator.removeProduct(productNameA);
 
-console.log(`\n*** Remove ${productName} ***`);
-calorieCalculator.removeProduct(productName);
-
-console.log(`Сhecking the availability of the ${productName} in the list:\n- `
-    + calorieCalculator.getProductCalories(productName));  // Product not found
+console.log(`Сhecking the availability of the ${productNameA} in the list:\n- `
+    + calorieCalculator.getProductCalories(productNameA));  // Product not found
 
 
 console.log('\n \n \n#2.Унікальні користувачі.')
@@ -84,18 +82,17 @@ let userName = 'john_doe';
 console.log(`Add new user: ${userName}!`);
 uniqueUsernames.addUser(userName);
 
-userName = 'jane_doe';
-console.log(`Add new user: ${userName}!`);
-uniqueUsernames.addUser(userName);
+let userName2 = 'jane_doe';
+console.log(`Add new user: ${userName2}!`);
+uniqueUsernames.addUser(userName2);
 
-userName = 'john_doe';
 console.log(`Add new user: ${userName}!`);
 uniqueUsernames.addUser(userName);
 
 
 
 console.log(`\nСhecking the availability of the ${userName} in the list: ${uniqueUsernames.exists(userName)}`); // true
-userName = 'pes_patron';
-console.log(`Сhecking the availability of the ${userName} in the list: ${uniqueUsernames.exists(userName)}`); // false
+let userName3 = 'pes_patron';
+console.log(`Сhecking the availability of the ${userName3} in the list: ${uniqueUsernames.exists(userName3)}`); // false
 console.log(`Number of unique names: ${uniqueUsernames.count()}`); // 2
 console.log(uniqueUsernames);
